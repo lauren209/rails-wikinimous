@@ -1,0 +1,31 @@
+<div class="wrapper-pink">
+<div class="container" >
+
+  <h1>Articles</h1>
+
+
+
+  <%= link_to "new article", new_article_path %>
+
+</div>
+
+
+<div class="text-center">
+
+  <% @articles.each do |article| %>
+
+
+
+  <h2> <%= link_to article.title , article_path(article) %> </h2>
+
+  <%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  <%= link_to "edit info!", edit_article_path(article), class: "btn btn-info" %>
+
+  <% end %>
+</div>
+
+
+<div class="footer">
+
+</div>
+</div>
